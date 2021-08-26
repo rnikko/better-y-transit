@@ -1,0 +1,1139 @@
+@import '@/styles/_variables.sass'
+
+:root
+  --color-text-base: var(--color-grey-1)
+  --color-text-alt: var(--color-grey-3)
+  --color-text-alt-2: var(--color-grey-7)
+
+  --color-icon-base: var(--color-text-base)
+  --color-icon-alt: var(--color-text-alt)
+  --color-icon-alt-2: var(--color-text-alt-2)
+
+  --color-background-base: var(--color-white)
+
+  --color-background-body: var(--color-grey-15)
+
+  --color-separator-card: var(--color-grey-10)
+
+  --color-background-card: var(--color-white)
+  --color-background-card-hover: var(--color-grey-13)
+  --color-background-card-icon: var(--color-grey-7)
+
+  --color-background-sidebar: var(--color-sidebar-green-2)
+
+html
+  box-sizing: border-box
+  margin: 0
+  width: 100%
+  direction: ltr
+
+body
+  box-sizing: border-box
+  display: block
+  margin: 0
+  width: 100%
+  height: 100vh
+  direction: ltr
+
+  background-color: var(--color-background-body)
+  font-family: Roboto, "Noto Sans JP", Arial, sans-serif
+  color: var(--color-text-base)
+  font-size: var(--font-size-4)
+  overflow: hidden
+
+button
+  background: var(--color-transparent)
+  border: 0
+  outline: 0
+  padding: 0
+
+button:hover
+  cursor: pointer
+
+input
+  font-family: Roboto, "Noto Sans JP", Arial, sans-serif
+  background: var(--color-transparent)
+  color: var(--color-text-base)
+  border: 0
+  outline: 0
+  padding: 0
+
+input::placeholder
+  color: var(--color-text-alt-2)
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+tr
+  display: table-row
+  vertical-align: inherit
+
+td
+  display: table-cell
+  vertical-align: inherit
+
+thead
+  display: table-header-group
+  vertical-align: middle
+  border-color: inherit
+
+th
+  display: table-cell
+
+.byt-root--theme-dark
+  --color-text-base: var(--color-grey-15)
+  --color-text-alt: var(--color-grey-13)
+  --color-text-alt-2: var(--color-grey-9)
+
+  --color-icon-base: var(--color-text-base)
+  --color-icon-alt: var(--color-text-alt)
+  --color-icon-alt-2: var(--color-text-alt-2)
+
+  --color-background-base: var(--color-grey-1)
+
+  --color-background-body: var(--color-grey-15)
+
+  --color-separator-card: var(--color-grey-10)
+
+  --color-background-card: var(--color-grey-1)
+  --color-background-card-hover: var(--color-grey-6)
+  --color-background-card-icon: var(--color-grey-12)
+
+  --color-background-sidebar: var(--color-grey-3)
+
+  color: var(--color-text-base)
+
+*,
+*:before,
+*:after 
+  box-sizing: inherit
+  -webkit-tap-highlight-color: transparent
+  -moz-tap-highlight-color: transparent
+
+// for icons
+
+.material-icons 
+  font-family: 'Material Icons'
+  font-weight: normal
+  font-style: normal
+  font-size: 24px   Preferred icon size 
+  // display: inline-block
+  line-height: 1
+  text-transform: none
+  letter-spacing: normal
+  word-wrap: normal
+  white-space: nowrap
+  direction: ltr
+  text-align: center
+  vertical-align: middle
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  // cursor: inherit
+  font-size: inherit
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  vertical-align: middle
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale
+
+  /* Support for IE. */
+  font-feature-settings: 'liga'
+
+#app
+  width: calc(100%)
+  height: 100vh
+  min-height: 700px
+  min-width: 1080px
+
+  display: flex
+  /*flex-wrap: nowrap*/
+  /*position: absolute*/
+
+// generic style classes
+
+.byt-space
+  flex: 1 !important
+
+.byt-row
+  display: flex
+
+.byt-col
+  flex: 10000 1 0%
+
+.byt-col-auto
+  flex: 0 0 auto
+
+.cursor-pointer:hover
+  cursor: pointer
+
+.disabled:hover
+  cursor: not-allowed
+
+.hide-opacity
+  opacity: 0
+
+.mapboxgl-canvas
+  outline: 0
+
+.mapboxgl-ctrl-logo
+  display: none !important
+
+.button-icon
+  color: var(--color-icon-base)
+  font-size: 24px
+
+.button-icon-wrap
+  padding: 4px
+  margin: 8px 12px
+
+.button-icon-wrap:hover
+  background: rgba(0, 0, 0, 0.08)
+  border-radius: 3px
+
+.flip-horiz
+  -moz-transform: scaleX(-1)
+  -o-transform: scaleX(-1)
+  -webkit-transform: scaleX(-1)
+  transform: scaleX(-1)
+  filter: FlipH
+  -ms-filter: "FlipH"
+
+// transitions
+
+.fade-enter-active,
+.fade-leave-active 
+  transition: opacity .25s
+
+.fade-enter,
+.fade-leave-to 
+  opacity: 0
+
+
+.slide-leave-active,
+.slide-enter-active
+  transition: .25s
+
+.slide-enter,
+.slide-leave-to
+  transform: translate(0, -100%)
+
+// styles found in Index.vue
+
+#content-wrapper
+  width: calc(100%)
+  height: 100vh
+  min-height: 700px
+  min-width: 1080px
+  display: flex
+  flex-wrap: nowrap
+  position: absolute
+
+#map
+  width: 100%
+  height: 100%
+
+#black-overmap
+  z-index: 20
+  top: 0
+  position: absolute
+  background: rgba(0, 0, 0, 0.5)
+  height: 100%
+  width: 100%
+
+// #over-map
+//   position: absolute
+//   z-index: 5
+//   display: flex
+
+// styles found in RadioButton.vue
+
+.byt-radio__label-wrap
+  margin: auto
+  -webkit-user-select: none
+  user-select: none
+  cursor: pointer
+  display: inline-block
+
+.byt-radio__label
+  padding-left: 8px
+  line-height: 24px
+  font-size: 14px
+
+.byt-radio__circle
+  background: #FFF
+  float: left
+  position: relative
+  width: 18px
+  height: 18px
+  margin: 3px 0
+  border: 2px solid #c8ccd4
+  border-radius: 100%
+
+.byt-radio__circle:after
+  content: ""
+  position: absolute
+  top: 4px
+  left: 4px
+  width: 6px
+  height: 6px
+  border-radius: 100%
+  background: #000
+  transform: scale(0)
+  transition: all 0.3s ease
+  pointer-events: none
+
+.byt-radio__circle:hover
+  border-color: #888
+
+.byt-radio__input
+  display: none
+
+.byt-radio__input:checked + .byt-radio__circle:after
+  transform: scale(1)
+  transition: all 0.3s cubic-bezier(0.35, 0.9, 0.4, 0.9)
+  opacity: 1
+
+// styles found in Checkbox.vue
+
+.byt-cb
+  height: 24px
+
+.byt-cb__label-wrap
+  -webkit-user-select: none
+  user-select: none
+  cursor: pointer
+  font-size: 16px
+
+.byt-cb__label-wrap span
+  display: inline-block
+
+.byt-cb__check svg
+  position: absolute
+  top: 2px
+  left: 1px
+  fill: none
+  stroke: #000
+  stroke-width: 2
+  stroke-linecap: round
+  stroke-linejoin: round
+  stroke-dasharray: 16px
+  stroke-dashoffset: 16px
+  transition: all .15s ease
+  transition-delay: .1s
+  transform: translate3d(0, 0, 0)
+
+.byt-cb__check
+  position: relative
+  margin: 3px 0
+  width: 18px
+  height: 18px
+  border-radius: 2px
+  transform: scale(1)
+  vertical-align: middle
+  background: #FFF
+  border: 2px solid #c8ccd4
+  transition: all .1s ease
+
+.byt-cb__label
+  padding-left: 8px
+  line-height: 24px
+  font-size: 14px
+
+.byt-cb__label-wrap:hover .byt-cb__check,
+.byt-cb__label-wrap:checked:hover .byt-cb__check
+  border-color: #888
+
+.byt-cb__input
+  display: none
+
+.byt-cb__input:checked + .byt-cb__label-wrap .byt-cb__check svg
+  stroke-dashoffset: 0
+
+// styles found in PoiSuggestions.vue
+
+.suggestions
+  background: var(--color-background-card)
+  color: var(--color-text-alt)
+  border-top: 1px solid var(--color-separator-card)
+  font-size: var(--font-size-4)
+  line-height: 24px
+
+.suggestions__location
+  // width: 100%
+  padding: 12px 16px
+
+.suggestions__location:hover
+  background: var(--color-background-card-hover)
+
+.suggestions__note
+  display: flex
+  padding: 16px 0
+  font-size: 15px
+  text-align: center
+  color: var(--color-text-base)
+  font-weight: 400
+  justify-content: center
+
+.suggestions__spinner
+  margin-right: 12px
+  margin-left: -36px
+
+.suggestion
+  align-items: center
+  // width: 100%
+  padding: 8px 16px
+
+.suggestion span
+  display: block
+
+.suggestion .poi-icon
+  font-size: 24px
+  color: var(--color-background-card-icon)
+
+.suggestion .name
+  color: var(--color-text-alt)
+  font-weight: var(--font-weight-semibold)
+
+.suggestion .area
+  text-overflow: clip
+  font-weight: var(--font-weight-normal)
+  color: var(--color-text-alt-2)
+
+.suggestion__selected,
+.suggestion:hover
+  background: var(--color-background-card-hover)
+
+// styles found in OriginInput.vue
+
+.right-sidebar
+  left: calc(100% - 416px)
+
+.right-sidebar-settings
+  left: calc(100% - 300px)
+
+.origin-input
+  position: relative
+  width: 400px  
+  margin: 8px
+  box-shadow: var(--shadow-3)
+  border-radius: 3px
+
+.input-wrapper
+  background: var(--color-background-card)
+  font-size: var(--font-size-5)
+  width: 100%
+
+.input__input
+  font-size: 14px
+  height: 32px
+  margin: 8px 0
+  line-height: 24px
+
+// styles found in Sidebar.vue
+
+#sidebar
+  z-index: 2
+  position: relative
+  width: 400px
+  margin: 8px
+  max-height: calc(100% - 16px)
+  flex-direction: column
+  box-shadow: var(--shadow-3)
+  color: #fff
+
+#sidebar-header
+  position: relative
+  background: var(--color-background-sidebar)
+
+.sidebar-title
+  line-height: 48px
+  font-size: 16px
+  font-weight: 500
+  color: #fff
+
+.sidebar-btn__icon
+  color: #FFF
+  font-size: 24px
+
+.sidebar-btn
+  padding: 4px
+  margin: 8px 12px
+
+.sidebar-btn:hover
+  background: rgba(255, 255, 255, 0.25)
+  border-radius: 3px
+
+.sidebar-input
+  padding: 8px 0px
+  margin-left: 16px
+  // padding: 8px 12px 8px 16px
+  // padding: 8px 16px
+  font-size: var(--font-size-5)
+  color: #FFF
+  opacity: 0.95
+
+.sidebar-input:hover
+  opacity: 1
+
+.sidebar-input__icon
+  font-size: 22px
+  height: 24px
+  width: 24px
+  margin-right: 16px
+  color: #FFF
+
+.sidebar-input__input
+  color: #FFF
+  font-size: 15px
+  line-height: 23px
+  border-bottom: 1px solid #FFF
+
+.sidebar-input__input::placeholder
+  color: #FFF
+
+#sidebar-results
+  height: auto
+  background: var(--color-background-base)
+  position: relative
+  overflow: auto
+
+// styles found in WaypointsOptions.vue
+
+.route-options__add-via-btn
+  height: 24px
+  width: 24px
+  padding: 1px
+  line-height: 18px
+  margin: 12px 16px 0px 16px
+
+.route-options__add-via-btn:hover
+  border-radius: 50%
+
+.route-options__add-via-btn__icon
+  font-size: 20px
+
+.route-options__timep-select
+  padding: 4px 0
+  margin: 0px
+  margin-top: 8px
+
+.route-options-sub__open-btn
+  line-height: 24px
+  font-size: 13px
+  margin: 8px 12px 0px 12px
+  padding: 4px
+
+.route-options-sub
+  z-index: 2
+  background: var(--color-background-sidebar)
+  position: absolute
+  width: 100%
+
+.route-options-sub__wrap
+  padding: 12px 8px 8px 8px
+  background: rgba(0, 0, 0, 0.35)
+  box-shadow: 0 4px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px rgba(0, 0, 0, 0.14), 0 2px 4px rgba(0, 0, 0, 0)
+
+.route-options-main
+  background: var(--color-background-sidebar)
+
+.route-options-main__wrap
+  background: rgba(0, 0, 0, 0.35)
+  flex-wrap: wrap
+  padding-bottom: 8px
+
+.route-options-sub__header
+  margin: 0 8px
+  font-size: 14px
+
+.route-options-sub__header span
+  line-height: 24px
+
+.route-options-sub__options
+  margin-top: 8px
+  color: rgba(255,255,255,0.87)
+
+.route-options-sub-column
+  margin: 0 8px
+
+.payment-options
+  margin-bottom: 8px
+
+.transport-options__header
+  line-height: 24px
+  font-size: var(--font-size-5)
+
+.transport-options__cb-radio-wrap
+  font-size: var(--font-size-2)
+  padding: 4px 0
+
+.route-waypoints
+  background: var(--color-background-sidebar)
+  align-items: center
+
+.route-waypoints__inputs
+  margin-bottom: 8px
+
+.route_waypoints__line
+  position: absolute
+  height: calc(100% - 156px)
+  top: 74px
+  left: calc(28px - 2px)
+  width: 4px
+  background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4) 2px, transparent 2px, transparent 4px)
+
+.route-waypoints__swap-btn
+  margin: 0 12px
+
+.via-icon
+  font-size: 18px
+
+.sidebar-suggestions
+  position: absolute
+  width: 100%
+  z-index: 2
+  /*need shadow here because pos absolute*/
+  box-shadow: var(--shadow-3)
+
+// styles found in GoogStyleSelect.vue
+
+.select-menu
+  position: relative
+
+.select-menu__btn
+  height: 24px
+  color: #fff
+  opacity: 0.85
+  padding-left: 3px
+
+.select-menu__selected-text
+  line-height: 24px
+  font-size: 14px
+  color: #fff
+  margin-right: 4px
+
+.select-menu__btn:hover
+  opacity: 1
+
+.select-menu__options
+  /*z-index-above-2*/
+  z-index: 2
+
+  width: 84px
+  top: 24px
+  left: -3px
+  position: absolute
+  padding: 4px 0
+  font-size: 13px
+  color: #333
+  background: #fff
+  outline: 1px solid rgba(0,0,0,0.2)
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2)
+  margin-top: 2px
+  margin-left: 4px
+
+.select-menu__option
+  padding: 4px 8px
+  text-align: center
+  background-color: #fff
+
+.select-menu__option:hover,
+.select-menu__option-selected
+  background-color: #f1f1f1
+  color: #222
+
+.date-time-picker-wrap
+  font-size: 12px
+  margin: 0px auto 8px auto
+
+// styles found in DateTimePicker.vue
+
+.date-time-picker-input
+  border-bottom: 1px solid #fff
+  color: #fff
+  opacity: 0.7
+  align-items: center
+  flex-wrap: wrap
+
+.date-time-picker-btns
+  color: #fff
+  opacity: 0.7
+  height: 27px
+  padding: 0
+  outline: 0
+  font-size: 16px
+  background: transparent
+  border-color: transparent
+
+.date-time-picker-input:hover,
+.date-time-picker-btns:hover
+  opacity: 1
+
+.date-time-picker__icon
+  margin-right: 6px
+  font-size: 16px
+
+.time-picker__input
+  font-size: 12px
+  color: #fff
+  width: 50px
+
+.time-picker__options
+  width: 70px
+  padding: 4px 0
+  color: #000
+  background: #fff
+  outline: 1px solid rgba(0,0,0,0.2)
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2)
+  height: 220px
+  // above-2
+  z-index: 2
+  position: absolute
+
+.time-picker__option
+  text-align: center
+  background-color: #fff
+  width: 70px
+  padding: 4px 16px
+
+.time-picker__option:hover
+  background-color: #f1f1f1
+  color: #222
+
+.date-picker__input
+  font-size: 12px
+  color: #fff
+  width: 84px
+
+.date-picker__calendar
+  margin-top: -1px
+  margin-left: 1px
+  color: #000
+  background: #fff
+  outline: 1px solid rgba(0,0,0,0.2)
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2)
+  padding: 16px
+  width: 166px
+  // above-2
+  z-index: 2
+  position: absolute
+
+.calendar-header
+  text-align: center
+  font-size: 13px
+  color: #666
+
+.calendar-nextprev-btn
+  margin: 1px 0
+  padding: 0 5px
+  border: 0
+  outline: 0
+  color: #000
+  font-size: 16px
+  font-weight: normal
+  background: transparent
+
+.calendar-nextprev-btn:hover
+  background: #eee
+
+.calendar-able
+  line-height: normal
+
+.calendar-day
+  margin: 0
+  padding: 6px 3px
+  text-align: center
+  font-size: 11px
+  font-weight: normal
+  vertical-align: baseline
+  width: 19px
+
+.calendar-date
+  text-align: center
+  vertical-align: middle
+  height: 21px
+  padding: 3px
+  color: #666
+  font: 11px Arial,sans-serif
+  border-bottom: 3px solid transparent
+  line-height: 12px
+
+.calendar-date:hover
+  border-bottom-color: #9CC1EF
+
+.calendar-selected
+  background-color: #eee
+
+.calendar-today
+  font-weight: bold
+
+.calendar-other-month
+  color: #ccc
+
+// styles found in Route.vue
+
+.route__selected-line
+  position: absolute
+  top: 0
+  left: 0
+  height: 100%
+  width: 6px
+  background: var(--color-background-card-hover)
+
+.route__fetching-ls
+  height: 2px
+  width: calc(100% - 6px)
+  margin-left: 6px
+  margin-top: -2px
+
+.route
+  overflow-x: hidden
+  border-bottom: 1px dashed rgba(180, 180, 180, 0.8)
+  position: relative
+  color: var(--color-text-base)
+
+.route__summary
+  padding: 24px
+
+.route__icon
+  align-items: start
+  color: var(--color-background-card-icon)
+  font-size: 24px
+
+.route__main
+  margin-left: 4px
+  // margin-left: 16px
+
+.route__duration
+  margin-left: 12px
+  margin-right: 2px
+
+.route__leg-map
+  flex-wrap: wrap
+  margin-top: 6px
+
+.route__leg-map-leg
+  height: 21px
+  margin: 4px 3px 4px 0
+
+.route__leg-map-chevron
+  font-size: 21px
+  margin-right: 3px
+  color: var(--color-text-alt)
+
+.route__leg-map-icon
+  height: 100%
+  margin-right: 4px
+
+.route__leg-map-tname
+  display: block
+  // margin-top: -1px
+  // padding: 1px 0 2px 0
+
+.route__secondary
+  margin-top: 6px
+  color: var(--color-text-alt)
+  font-size: 13px
+
+.route__price
+  color: var(--color-text-alt-2)
+  vertical-align: middle
+  margin-right: 24px
+  line-height: 23px
+
+.route__tags
+  margin: 2px 0
+
+.route__tx-ct
+  color: var(--color-text-alt-2)
+  padding: 1px 0
+  margin-right: 24px
+
+.route__tx-ct-icon
+  background: var(--color-text-alt-2)
+  color: var(--color-white)
+  font-size: 12px
+  padding: 2px 4px 2px 3px
+  border-radius: 2px
+  margin-right: 4px
+
+.route__show-legs-icon
+  font-size: 23px
+  color: var(--color-text-alt-2)
+  margin-right: 4px
+  transform: rotate(180deg)
+
+.route__legs
+  padding: 0 24px
+  padding-bottom: 24px
+  margin-left: 4px
+  // width: 100%
+  position: relative
+
+.route__dashed-line
+  position: absolute
+  top: 12px
+  left: 72px
+  height: calc(100% - 48px)
+  width: 6px
+  border-left: 1px solid transparent
+  border-right: 1px solid transparent
+  background: repeating-linear-gradient(0deg, #BBB, #BBB 2px, transparent 2px, transparent 4px)
+
+// classes found in RouteLeg.vue
+
+.leg
+  position: relative
+  width: 100%
+
+.leg__line-color
+  position: absolute
+  top: 12px
+  left: 48px
+  height: calc(100% - 24px)
+  border-left: 6px solid #aaa
+
+.leg__station-time
+  width: 45px
+  font-weight: 500
+  font-size: 13px
+  line-height: 24px
+  color: var(--color-text-alt)
+
+.leg__stop-circle
+  position: relative
+  top: 2px
+  background: #FFF
+  width: 12px
+  height: 12px
+  border: 3px solid #000
+  border-radius: 50%
+
+.leg__stop-circle-dark
+  background: #000
+  border: 3px solid #FFF
+
+// .leg__stop-circle
+//   margin-top: 3px
+//   height: 0px
+//   width: 0px
+//   border: 6px solid #c8c8c8
+//   border-radius: 50%
+//   border-color: #000
+//   position: relative
+//   top: 3px
+
+// .leg__stop-circle-inner
+//   position: relative
+//   top: -3px
+//   left: -3px
+//   border: 3px solid #fff
+//   border-radius: 50%
+
+.leg__summary
+  margin: 16px 0
+  margin-bottom: 12px
+
+.leg__icon
+  height: 56px
+  padding-right: 22px
+
+.leg__icon .material-icons
+  font-size: 16px
+  margin: 16px 0 16px 10px
+
+.leg__icon img
+  height: 16px
+  width: 16px
+  margin: 20px 0 20px 10px
+
+.leg__inner
+  margin: 3px 3px 3px 18px
+
+.leg__inner-top
+  // white-space: nowrap
+  width: 286px
+
+.leg__inner-bot
+  margin-top: 8px
+
+.leg__transport-name
+  border-radius: 2px
+  white-space: nowrap
+  line-height: 14px
+  padding: 1px 3px
+
+.leg__transport-dir
+  padding: 1px 2px
+  color: var(--color-text-alt-2)
+  white-space: nowrap
+
+.leg__show-stops-icon
+  font-size: 23px
+  opacity: 0.5
+  color: var(--color-text-alt)
+  margin-right: 6px
+
+.leg__show-stops-icon:hover
+  opacity: 1
+
+.leg__duration
+  padding: 1px 2px
+  color: var(--color-text-alt-2)
+
+.leg__station-ct
+  margin-left: 6px
+  padding: 1px 2px
+  color: var(--color-text-alt-2)
+
+.leg__platform
+  margin-left: 12px
+
+.leg__platform-num
+  font-size: 13px
+  font-weight: 600
+  white-space: nowrap
+  line-height: 13px
+  color: #fff
+  background: #777
+  padding: 2px 4px
+
+.leg__platform-text
+  padding: 1px 2px
+  color: #777
+
+.leg__passing-station
+  margin-top: 8px
+
+.leg__station-name
+  min-height: 24px
+  font-weight: 500
+  font-size: 16px
+  line-height: 24px
+  padding-left: 8px
+
+.leg__passing-station-name
+  margin-top: 2px
+  padding-left: 12px
+  font-weight: 300
+  font-size: 13px
+  line-height: 13px
+  color: var(--color-text-alt)
+
+.leg__passing-station-time
+  margin-top: 3px
+  font-weight: 300
+  font-size: 12px
+  line-height: 12px
+  color: var(--color-text-alt)
+  width: 45px
+
+// styles found in RouteTag.vue
+
+.route__tag
+  height: 17px
+  width: 17px
+  background: #000
+  color: #fff
+  margin-right: 3px
+  transform: skew(-20deg)
+  border-radius: 2px
+
+.route__tag-text
+  display: block
+  position: relative
+  left: 17%
+  line-height: 17px
+  font-size: 11px
+  font-weight: 500
+
+.route__tag-fast
+  background: var(--color-fast)
+
+.route__tag-conv
+  background: var(--color-conv)
+
+.route__tag-cheap
+  background: var(--color-cheap)
+
+// SettingsAbout.vue
+
+#about-settings
+  z-index: 20
+  position: absolute
+  top: 0
+  width: 300px
+  background: var(--color-background-base)
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px rgba(0, 0, 0, 0.14), 0 1px 10px rgba(0, 0, 0, 0.12)
+  /*box-shadow: 2px 0px 4px -1px rgba(0, 0, 0, 0.3), 2px 0px 8px rgba(0, 0, 0, 0.2), 4px 0px 10px rgba(0, 0, 0, 0.15)*/
+
+.toggle:hover
+  background: var(--color-background-card-hover)
+
+.about-settings-header
+  padding: 12px 20px
+
+// Toggle.vue
+
+.byt-toggle
+  height: 24px
+
+.byt-toggle__label-wrap
+  -webkit-user-select: none
+  user-select: none
+  cursor: pointer
+  font-size: 16px
+
+.byt-toggle__label-wrap span
+  display: inline-block
+
+.byt-toggle__check svg
+  box-shadow: var(--shadow-1)
+  border-radius: 50%
+  position: absolute
+  top: -4px
+  left: 0px
+  fill: #FFF
+  /*stroke: #000*/
+  /*stroke-width: 2*/
+  /*stroke-linecap: round*/
+  /*stroke-linejoin: round*/
+  /*stroke-dasharray: 16px*/
+  /*stroke-dashoffset: 16px*/
+  transition: all .15s ease
+  transition-delay: .1s
+  transform: translate3d(0, 0, 0)
+
+.byt-toggle__check
+  position: relative
+  top: -1px
+  width: 40px
+  height: 16px
+  transform: scale(1)
+  vertical-align: middle
+  background: rgba(127, 127, 127, 0.5)
+  /*background: #FFF*/
+  /*border: 2px solid #c8ccd4*/
+  border-radius: 8px
+  transition: all .1s ease
+
+.byt-toggle__check:hover
+  background: rgba(127, 127, 127, 0.8)
+
+.byt-toggle__input
+  display: none
+
+.byt-toggle__input:checked + .byt-toggle__label-wrap .byt-toggle__check svg
+  fill: rgb(62,166,255)
+  left: 18px
+

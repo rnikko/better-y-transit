@@ -1,0 +1,60 @@
+{
+  "name": "better-y-transit",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build --mode production",
+    "lint": "vue-cli-service lint"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "core-js": "^3.6.5",
+    "invert-color": "^2.0.0",
+    "lodash": "^4.17.21",
+    "mapbox-gl": "^0.53.1",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.33",
+    "node-vibrant": "^3.1.5",
+    "sass": "^1.38.1",
+    "sass-loader": "^7.3.1",
+    "simplebar": "^5.3.5",
+    "simplebar-vue": "^1.6.7",
+    "vue": "^2.6.11",
+    "vue-click-outside": "^1.1.0",
+    "vue-mapbox": "^0.4.1",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
