@@ -12,8 +12,7 @@
             v-on:keyup.enter="fetchRoutesDebounced"
             type="text"
             v-model.trim="origin"
-            placeholder="出発"
-            v-click-outside="() => { if (suggestionsKey === 'origin') { show.suggestions = false; }}" />
+            placeholder="出発" />
         </div>
         <div class="sidebar-input byt-row" v-if="show.viaInput">
           <div class="sidebar-input__icon via-icon material-icons">
@@ -24,8 +23,7 @@
             v-on:keyup.enter="fetchRoutesDebounced"
             type="text"
             v-model.trim="via"
-            placeholder="経由"
-            v-click-outside="() => { if (suggestionsKey === 'via') { show.suggestions = false; }}" />
+            placeholder="経由" />
         </div>
         <div class="sidebar-input byt-row">
           <div class="sidebar-input__icon material-icons">
@@ -36,8 +34,7 @@
             v-on:keyup.enter="fetchRoutesDebounced"
             type="text"
             v-model.trim="destination"
-            placeholder="到着"
-            v-click-outside="() => { if (suggestionsKey === 'destination') { show.suggestions = false; }}" />
+            placeholder="到着" />
         </div>
       </div>
       <button class="route-waypoints__swap-btn sidebar-btn" @click="flipOriginDestination">
@@ -315,6 +312,7 @@ export default {
       this.fetchRoutesDebounced();
     },
     fetchRoutesDebounced: debounce(async function f() {
+      this.show.suggestions = false
       // reset selected (clears map)
       this.select(null);
       // fetches routes from new params (flipped origin, destination)
